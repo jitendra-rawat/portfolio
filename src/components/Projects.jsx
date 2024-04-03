@@ -132,7 +132,7 @@ const Projects = () => {
   };
 
   return (
-    <section id='projects' className='max-w-7xl mx-auto container mt-20'>
+    <section id='projects' className='max-w-7xl mx-auto container mt-20 py-20'>
       <p className='font-poppins text-gray-700 text-center mb-2'>Explore my Excellent</p>
       <h2 className='font-poppins text-4xl text-center font-bold'>Projects</h2>
 
