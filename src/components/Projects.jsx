@@ -10,10 +10,16 @@ import ajar from '../assets/ngo.png'
 import schoolfees from '../assets/doon.png'
 import football from '../assets/football.png'
 
+import blackberry from '../assets/black.png'
+import radit from '../assets/radit.png'
+import dash from '../assets/dash.png'
+
 
 
 
 const projectsData = [
+
+
   {
     title: 'Tour and Travel Web App',
     image:travel,
@@ -25,6 +31,12 @@ const projectsData = [
     image: toy,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
     link: 'https://anshitoys.com/'
+  },
+  {
+    title: 'Radit Software ',
+    image: radit,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+    link: 'https://radit-software.netlify.app/'
   },
   {
     title: 'Advisory and Consulting Agency ',
@@ -45,6 +57,24 @@ const projectsData = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
     link: 'https://seay-webapp.netlify.app/'
   },
+
+  {
+    title: 'Blackberry Technologies',
+    image: blackberry,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+    link: 'https://www.blackberrytechnologies.net/'
+  },
+
+
+  {
+    title: 'Eccomerce Dashboard ',
+    image: dash,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+    link: 'https://backend-dashboard-app.netlify.app/'
+  },
+
+ 
+
 
   {
     title: 'ChatBot',
