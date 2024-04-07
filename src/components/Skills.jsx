@@ -10,13 +10,13 @@ const Skills = () => {
         <h2 className='font-poppins text-4xl font-bold text-black text-center'>Skills</h2>
 
 
-        <div className='flex justify-between gap-8 items-center mt-16'>
+        <div className='flex flex-col lg:flex-row justify-between gap-8 items-center mt-16'>
 
 
             {/* first box */}
 
 
-            <div className='w-1/2 border-2 border-black rounded-xl py-12 px-12'>
+            <div className='lg:w-1/2 border-2 border-black rounded-xl p-4 lg:py-12 lg:px-12'>
                 <p className='font-poppins text-2xl text-center'>Front end Development</p>
 
 
@@ -89,7 +89,7 @@ const Skills = () => {
 
             {/* second box */}
 
-            <div className='w-1/2 border-2 border-black rounded-xl py-12 px-12'>
+            <div className='lg:w-1/2 border-2 border-black rounded-xl lg:py-12 p-4 lg:px-12'>
                 <p className='font-poppins text-2xl text-center'>Back-end Development</p>
 
 

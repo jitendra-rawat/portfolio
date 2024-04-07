@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-  <footer className='max-w-xl mx-auto container flex justify-between items-center mt-20 py-20'>
+  <footer className='lg:max-w-xl mx-auto container flex justify-between items-center lg:mt-20 py-20'>
 
   <a href="#about"> <p className='font-poppins font-bold'>About</p></a> 
 

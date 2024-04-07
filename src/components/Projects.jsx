@@ -115,8 +115,8 @@ const Projects = () => {
   const displayProjects = projectsData
     .slice(pagesVisited, pagesVisited + projectsPerPage)
     .map((project, index) => (
-      <a target='_blank' href={project.link}>   <div key={index} className='shadow-2xl  p-4 rounded-xl w-[400px] h-[400px] mb-8 cursor-pointer'>
-        <img className='w-[350px] h-[250px] object-cover rounded-xl' src={project.image} alt={project.title} />
+      <a target='_blank' href={project.link}>   <div key={index} className='shadow-2xl  p-4 rounded-xl lg:w-[400px] h-[400px] mb-8 cursor-pointer'>
+        <img className='lg:w-[400px] h-[250px] object-cover rounded-xl hover:animate-bounce' src={project.image} alt={project.title} />
         <div>
           <h2 className='font-poppins font-bold text-lg my-2'>{project.title}</h2>
           {/* <p className='font-poppins mb-2'>{project.description}</p> */}
@@ -132,15 +132,16 @@ const Projects = () => {
   };
 
   return (
-    <section id='projects' className='max-w-7xl mx-auto container mt-20 py-20'>
+    <section id='projects' className='lg:max-w-7xl mx-auto container lg:mt-20 py-20'>
       <p className='font-poppins text-gray-700 text-center mb-2'>Explore my Excellent</p>
       <h2 className='font-poppins text-4xl text-center font-bold'>Projects</h2>
 
-      <div className='flex flex-wrap justify-between items-center mt-20'>
+      <div className='flex flex-wrap justify-between items-center lg:mt-20'>
         {displayProjects}
       </div>
 
-      <ReactPaginate
+<div className='flex justify-center '>
+<ReactPaginate
         previousLabel={"Previous"}
         nextLabel={"Next"}
         pageCount={pageCount}
@@ -150,7 +151,10 @@ const Projects = () => {
         nextLinkClassName={"next"}
         disabledClassName={"disabled"}
         activeClassName={"active"}
+        className='flex flex-row justify-center items-center gap-4'
       />
+</div>
+  
     </section>
   );
 };
