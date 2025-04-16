@@ -1,123 +1,162 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Hamburger icon animation variants
+  const topLine = {
+    closed: { rotate: 0, y: 0 },
+    open: { rotate: 45, y: 7 },
+  };
+
+  const middleLine = {
+    closed: { opacity: 1 },
+    open: { opacity: 0 },
+  };
+
+  const bottomLine = {
+    closed: { rotate: 0, y: 0 },
+    open: { rotate: -45, y: -7 },
+  };
+
   return (
-    <section className="shadow-xl">
-      <header className="py-2 lg:py-4 max-w-xs lg:max-w-7xl mx-auto container flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center">
-          <h1 className="text-xl lg:text-2xl font-bold font-poppins">Jitendra Rawat</h1>
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 lg:h-20">
+          {/* Logo */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center"
+          >
+            <a href="#" className="text-xl lg:text-2xl font-bold font-poppins bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Jitendra Rawat
+            </a>
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {['About', 'Projects', 'Experience', 'Contact'].map((item) => (
+              <motion.a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="relative font-poppins font-medium text-gray-700 hover:text-blue-600 transition-colors px-3 py-2"
+                whileHover={{ scale: 1.05 }}
+              >
+                {item}
+                <motion.span
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.a>
+            ))}
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <motion.button
+            ref={menuRef}
+            className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+            whileTap={{ scale: 0.95 }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <motion.path
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                d="M 3 5 L 21 5"
+                variants={topLine}
+                animate={isOpen ? "open" : "closed"}
+              />
+              <motion.path
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                d="M 3 12 L 21 12"
+                variants={middleLine}
+                animate={isOpen ? "open" : "closed"}
+              />
+              <motion.path
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                d="M 3 19 L 21 19"
+                variants={bottomLine}
+                animate={isOpen ? "open" : "closed"}
+              />
+            </svg>
+          </motion.button>
         </div>
+      </div>
 
-        {/* Mobile Toggle Button */}
-        <button
-          className="block sm:hidden focus:outline-none  p-2"
-          onClick={toggleMenu}
-        >
-        <svg viewBox="0 0 100 80" width="40" height="40">
-  <rect width="100" height="20" rx="10"></rect>
-  <rect y="30" width="100" height="20" rx="10"></rect>
-  <rect y="60" width="100" height="20" rx="10"></rect>
-</svg>
-
-
-        </button>
-
-        {/* Navigation Links */}
-        <nav className="hidden sm:block">
-          <ul className="flex space-x-8">
-            <li>
-              <a
-                href="#about"
-                className="transition duration-300 ease-in-out font-poppins font-semibold text-lg"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                className="transition duration-300 ease-in-out font-poppins font-semibold text-lg"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#experience"
-                className="transition duration-300 ease-in-out font-poppins font-semibold text-lg"
-              >
-                Experience
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="transition duration-300 ease-in-out font-poppins font-semibold text-lg"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      {/* Mobile Navigation Links (Hidden on Desktop) */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.nav
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="absolute max-w-xs mx-auto container top-16 right-0 bg-white z-10 p-4 rounded-md shadow-md"
+            className="md:hidden fixed inset-0 bg-gray/50 z-40 pt-16"
+            onClick={() => setIsOpen(false)}
           >
-            <ul className="flex flex-col space-y-4">
-              <li>
-                <a
-                  href="#about"
-                  className="transition duration-300 ease-in-out font-poppins font-semibold text-lg"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  className="transition duration-300 ease-in-out font-poppins font-semibold text-lg"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#experience"
-                  className="transition duration-300 ease-in-out font-poppins font-semibold text-lg"
-                >
-                  Experience
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="transition duration-300 ease-in-out font-poppins font-semibold text-lg"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </motion.nav>
+            <motion.nav
+              className="bg-white shadow-lg rounded-b-lg mx-4"
+              initial={{ y: -50 }}
+              animate={{ y: 0 }}
+              exit={{ y: -50 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ul className="flex flex-col divide-y divide-gray-100">
+                {['About', 'Projects', 'Experience', 'Contact'].map((item) => (
+                  <motion.li
+                    key={item}
+                    whileHover={{ backgroundColor: "#f3f4f6" }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="block px-6 py-4 font-poppins font-medium text-gray-700"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.nav>
+          </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </header>
   );
 };
 
