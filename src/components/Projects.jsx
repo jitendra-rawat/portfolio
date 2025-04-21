@@ -10,8 +10,43 @@ import blackberry from '../assets/black.png';
 import radit from '../assets/radit.png';
 import garhwal from '../assets/garhwal.png';
 import bhavishya from '../assets/bhavishya.png';
+import le from "../assets/le.png"
+import rajput from "../assets/rajput.png"
+import romaz from "../assets/romaz.png"
+import rud from "../assets/rud.png"
+import garhwali from "../assets/garhwali.png"
 
 const projectsData = [
+  { 
+    title: 'Garhwali.com', 
+    image: garhwali, 
+    link: 'https://garwhalicom.vercel.app/',
+    category: 'Ecommerce'
+  },
+  { 
+    title: 'Hotel Le Meadows', 
+    image: le, 
+    link: 'https://hotel-lemeadows.vercel.app/',
+    category: 'Hotel'
+  },
+  { 
+    title: 'Hotel Rajput', 
+    image: rajput, 
+    link: 'https://hotel-rajput.vercel.app/',
+    category: 'Hotel'
+  },
+  { 
+    title: 'Hotel Romaz', 
+    image: romaz, 
+    link: 'https://hotel-romaz.vercel.app/',
+    category: 'Hotel'
+  },
+  { 
+    title: 'Rudransh Guest House', 
+    image: rud, 
+    link: 'https://rudransh-medicose-pipalkoti.vercel.app/',
+    category: 'Hotel'
+  },
   { 
     title: 'Garhwal Himalayan Homestay', 
     image: garhwal, 
