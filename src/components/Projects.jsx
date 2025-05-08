@@ -14,15 +14,11 @@ import le from "../assets/le.png"
 import rajput from "../assets/rajput.png"
 import romaz from "../assets/romaz.png"
 import rud from "../assets/rud.png"
-import garhwali from "../assets/garhwali.png"
+import drona from '../assets/drona.png'
+
 
 const projectsData = [
-  { 
-    title: 'Garhwali.com', 
-    image: garhwali, 
-    link: 'https://garwhalicom.vercel.app/',
-    category: 'Ecommerce'
-  },
+ 
   { 
     title: 'Hotel Le Meadows', 
     image: le, 
@@ -30,21 +26,27 @@ const projectsData = [
     category: 'Hotel'
   },
   { 
+    title: 'Hotel Drona Hills', 
+    image: drona, 
+    link: 'https://www.hoteldronahills.in/',
+    category: 'Hotel'
+  },
+  { 
     title: 'Hotel Rajput', 
     image: rajput, 
-    link: 'https://hotel-rajput.vercel.app/',
+    link: 'https://hotelrajput.in/',
     category: 'Hotel'
   },
   { 
     title: 'Hotel Romaz', 
     image: romaz, 
-    link: 'https://hotel-romaz.vercel.app/',
+    link: 'https://hotelromaz.in/',
     category: 'Hotel'
   },
   { 
     title: 'Rudransh Guest House', 
     image: rud, 
-    link: 'https://rudransh-medicose-pipalkoti.vercel.app/',
+    link: 'https://www.rudranshguesthouse.in/',
     category: 'Hotel'
   },
   { 
