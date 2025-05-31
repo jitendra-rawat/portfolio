@@ -15,14 +15,29 @@ import rajput from "../assets/rajput.png"
 import romaz from "../assets/romaz.png"
 import rud from "../assets/rud.png"
 import drona from '../assets/drona.png'
+import tour from '../assets/touruttrakhandtravels.png'
+import pashupati from '../assets/pashupati.png'
 
 
 const projectsData = [
+
+  { 
+    title: 'Tour Uttrakhand Travels', 
+    image:tour, 
+    link: 'https://tour-uttrakhand.vercel.app/',
+    category: 'Travels'
+  },
  
   { 
     title: 'Hotel Le Meadows', 
     image: le, 
     link: 'https://hotel-lemeadows.vercel.app/',
+    category: 'Hotel'
+  },
+  { 
+    title: 'Hotel Pashupati Palace', 
+    image: pashupati, 
+    link: 'https://www.pashupatipalace.in/',
     category: 'Hotel'
   },
   { 
