@@ -18,6 +18,7 @@ import drona from '../assets/drona.png'
 import tour from '../assets/touruttrakhandtravels.png'
 import pashupati from '../assets/pashupati.png'
 import icg from '../assets/icg.png'
+import asi from '../assets/asi.png'
 
 
 const projectsData = [
@@ -58,6 +59,12 @@ const projectsData = [
     image: toy, 
     link: 'https://anshitoys.com/',
     category: 'E-commerce'
+  },
+  { 
+    title: 'ASI Network', 
+    image: asi, 
+    link: 'https://asinetwork.in/',
+    category: 'Technology'
   },
   { 
     title: 'Blackberry Technologies', 
