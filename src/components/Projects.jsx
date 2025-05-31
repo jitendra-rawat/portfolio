@@ -17,6 +17,7 @@ import rud from "../assets/rud.png"
 import drona from '../assets/drona.png'
 import tour from '../assets/touruttrakhandtravels.png'
 import pashupati from '../assets/pashupati.png'
+import icg from '../assets/icg.png'
 
 
 const projectsData = [
@@ -35,6 +36,12 @@ const projectsData = [
     category: 'Hotel'
   },
   { 
+    title: 'Innocreate Design', 
+    image: icg, 
+    link: 'https://www.hoteldronahills.in/',
+    category: 'Product Design Company'
+  },
+  { 
     title: 'Hotel Pashupati Palace', 
     image: pashupati, 
     link: 'https://www.pashupatipalace.in/',
@@ -47,10 +54,29 @@ const projectsData = [
     category: 'Hotel'
   },
   { 
+    title: 'Anshit Toys', 
+    image: toy, 
+    link: 'https://anshitoys.com/',
+    category: 'E-commerce'
+  },
+  { 
+    title: 'Blackberry Technologies', 
+    image: blackberry, 
+    link: 'https://www.blackberrytechnologies.net/',
+    category: 'Technology'
+  },
+
+  { 
     title: 'Hotel Rajput', 
     image: rajput, 
     link: 'https://hotelrajput.in/',
     category: 'Hotel'
+  },
+  { 
+    title: 'Busy Boots Travel', 
+    image: busy, 
+    link: 'https://busybootstravel.vercel.app/',
+    category: 'Travel'
   },
   { 
     title: 'Hotel Romaz', 
@@ -82,12 +108,7 @@ const projectsData = [
     link: 'https://busybootstravel.netlify.app/',
     category: 'Travel'
   },
-  { 
-    title: 'Toys Based E-commerce', 
-    image: toy, 
-    link: 'https://anshitoys.com/',
-    category: 'E-commerce'
-  },
+ 
   { 
     title: 'Radit Software', 
     image: radit, 
@@ -100,18 +121,8 @@ const projectsData = [
     link: 'https://www.suigeneriscca.com/',
     category: 'Professional Services'
   },
-  { 
-    title: 'Busy Boots Travel', 
-    image: busy, 
-    link: 'https://busybootstravel.vercel.app/',
-    category: 'Travel'
-  },
-  { 
-    title: 'Blackberry Technologies', 
-    image: blackberry, 
-    link: 'https://www.blackberrytechnologies.net/',
-    category: 'Technology'
-  },
+ 
+
   { 
     title: 'Ajar Blind School', 
     image: ajar, 
