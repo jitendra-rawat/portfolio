@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { FiExternalLink } from 'react-icons/fi';
-import travel from '../assets/travel.png';
-import toy from '../assets/toys.png';
+
 import coaching from '../assets/coaching.png';
 import busy from '../assets/busy.png';
 import ajar from '../assets/ngo.png';
@@ -18,10 +17,25 @@ import drona from '../assets/drona.png'
 import tour from '../assets/touruttrakhandtravels.png'
 import pashupati from '../assets/pashupati.png'
 import icg from '../assets/icg.png'
-import asi from '../assets/asi.png'
+import dating from '../assets/datingkey.png'
+import dev from '../assets/dev.png'
+import dolphin from '../assets/dolphin.png'
 
 
 const projectsData = [
+
+  { 
+    title: 'DatingKey', 
+    image:dating, 
+    link: 'https://datingkey.co/',
+    category: 'Event Organiser & Dating'
+  },
+  { 
+    title: 'Busy Boots Travel', 
+    image: busy, 
+    link: 'https://busybootstravel.com/',
+    category: 'Travel'
+  },
 
   { 
     title: 'Tour Uttrakhand Travels', 
@@ -37,16 +51,16 @@ const projectsData = [
     category: 'Hotel'
   },
   { 
-    title: 'Innocreate Design', 
-    image: icg, 
-    link: 'https://www.hoteldronahills.in/',
-    category: 'Product Design Company'
+    title: 'Hotel Dev Palace', 
+    image: dev, 
+    link: 'https://www.devpalace.in/',
+    category: 'Hotel'
   },
   { 
-    title: 'Hotel Pashupati Palace', 
-    image: pashupati, 
-    link: 'https://www.pashupatipalace.in/',
-    category: 'Hotel'
+    title: 'Innocreate Design', 
+    image: icg, 
+    link: 'https://innocreate-design.netlify.app/',
+    category: 'Product Design Company'
   },
   { 
     title: 'Hotel Drona Hills', 
@@ -55,17 +69,20 @@ const projectsData = [
     category: 'Hotel'
   },
   { 
-    title: 'Anshit Toys', 
-    image: toy, 
-    link: 'https://anshitoys.com/',
-    category: 'E-commerce'
+    title: 'Hotel Dolphin', 
+    image: dolphin, 
+    link: 'https://www.hoteldolpin.in/',
+    category: 'Hotel'
   },
   { 
-    title: 'ASI Network', 
-    image: asi, 
-    link: 'https://asinetwork.in/',
-    category: 'Technology'
+    title: 'Hotel Pashupati Palace', 
+    image: pashupati, 
+    link: 'https://www.pashupatipalace.in/',
+    category: 'Hotel'
   },
+
+ 
+ 
   { 
     title: 'Blackberry Technologies', 
     image: blackberry, 
@@ -79,12 +96,7 @@ const projectsData = [
     link: 'https://hotelrajput.in/',
     category: 'Hotel'
   },
-  { 
-    title: 'Busy Boots Travel', 
-    image: busy, 
-    link: 'https://busybootstravel.vercel.app/',
-    category: 'Travel'
-  },
+
   { 
     title: 'Hotel Romaz', 
     image: romaz, 
@@ -109,12 +121,12 @@ const projectsData = [
     link: 'https://www.newbhavisyabadrihomestay.in/',
     category: 'Travel & Hospitality'
   },
-  { 
-    title: 'Tour and Travel Web App', 
-    image: travel, 
-    link: 'https://busybootstravel.netlify.app/',
-    category: 'Travel'
-  },
+  // { 
+  //   title: 'Tour and Travel Web App', 
+  //   image: travel, 
+  //   link: 'https://busybootstravel.netlify.app/',
+  //   category: 'Travel'
+  // },
  
   { 
     title: 'Radit Software', 

@@ -10,17 +10,17 @@ const Hero = () => {
         <div className="absolute bottom-10 right-20 w-60 h-60 rounded-full bg-purple-400 blur-3xl animate-float-delay"></div>
       </div>
 
-      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-24 relative z-10">
+      <div className="container max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-24 relative z-10">
         {/* Left Section */}
         <div className="text-center lg:text-left lg:w-1/2 space-y-6">
           <p className="font-poppins text-lg lg:text-xl font-semibold text-gray-600 mb-2 animate-fadeIn">
-            Hello, I'm
+            Hello, I am
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-poppins bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 mb-2 animate-fadeIn">
             Jitendra Rawat
           </h1>
           <p className="text-xl lg:text-2xl font-semibold font-poppins text-gray-600 mb-6 animate-fadeIn">
-            Full Stack Developer
+            Software Engineer
           </p>
           
           <p className="text-gray-600 font-poppins max-w-lg mx-auto lg:mx-0 mb-8 animate-fadeIn">

@@ -1,5 +1,4 @@
-import React from 'react'
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin} from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 const Footer = () => {
@@ -54,7 +53,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-center text-gray-500 text-sm font-poppins">
           <p>© {currentYear} Jitendra Rawat. All rights reserved.</p>
-          <p className="mt-2">Built with React and Tailwind CSS</p>
+          {/* <p className="mt-2">Built with React and Tailwind CSS</p> */}
         </div>
 
         {/* Back to Top Button */}

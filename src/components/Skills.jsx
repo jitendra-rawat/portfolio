@@ -1,15 +1,16 @@
-import react from '../assets/react.png'
-import next from '../assets/nextjs.png'
-import reactnative from '../assets/react.svg'
-import js from '../assets/javascript.png'
-import ts from '../assets/typescript.svg'
-import tailwind from '../assets/tailwind.png'
-import node from '../assets/node.png'
-import express from '../assets/express.png'
-import java from '../assets/java.webp'
-import spring from '../assets/spring.png'
-import mongo from '../assets/mongo.png'
-import mysql from '../assets/mysql.png'
+import react from "../assets/react.png";
+import next from "../assets/nextjs.png";
+import reactnative from "../assets/react.svg";
+import js from "../assets/javascript.png";
+import ts from "../assets/typescript.svg";
+import tailwind from "../assets/tailwind.png";
+import node from "../assets/node.png";
+import express from "../assets/express.png";
+
+import ai from "../assets/ai.webp";
+
+import mysql from "../assets/mysql.png";
+import sql from "../assets/sql.webp";
 
 const Skills = () => {
   const frontendSkills = [
@@ -18,15 +19,15 @@ const Skills = () => {
     { name: "React Native", image: reactnative, color: "bg-blue-50" },
     { name: "TypeScript", image: ts, color: "bg-amber-100" },
     { name: "JavaScript", image: js, color: "bg-yellow-50" },
-    { name: "Tailwind CSS", image: tailwind, color: "bg-teal-50" }
+    { name: "Tailwind CSS", image: tailwind, color: "bg-teal-50" },
   ];
 
   const backendSkills = [
+    { name: "GenAI", image: ai, color: "bg-red-50" },
     { name: "NodeJS", image: node, color: "bg-green-100" },
     { name: "ExpressJS", image: express, color: "bg-gray-50" },
-    { name: "Java", image: java, color: "bg-red-50" },
-    { name: "Spring Boot", image: spring, color: "bg-green-50" },
-    { name: "MongoDB", image: mongo, color: "bg-emerald-50" },
+
+    { name: "SQL", image: sql, color: "bg-yellow-50" },
     { name: "MySQL", image: mysql, color: "bg-blue-50" },
   ];
 
@@ -43,23 +44,27 @@ const Skills = () => {
         {/* Frontend Skills */}
         <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold font-poppins text-gray-800 mb-2">Frontend Development</h3>
+            <h3 className="text-2xl font-bold font-poppins text-gray-800 mb-2">
+              Frontend Development
+            </h3>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full"></div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
             {frontendSkills.map((skill, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`flex flex-col items-center p-4 rounded-xl ${skill.color} transition-all duration-300 hover:scale-105`}
               >
                 <div className="w-16 h-16 mb-3 flex items-center justify-center">
-                  <img 
-                    src={skill.image} 
-                    alt={skill.name} 
+                  <img
+                    src={skill.image}
+                    alt={skill.name}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <p className="text-lg font-medium font-poppins text-gray-700">{skill.name}</p>
+                <p className="text-lg font-medium font-poppins text-gray-700">
+                  {skill.name}
+                </p>
               </div>
             ))}
           </div>
@@ -68,23 +73,27 @@ const Skills = () => {
         {/* Backend Skills */}
         <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold font-poppins text-gray-800 mb-2">Backend Development</h3>
+            <h3 className="text-2xl font-bold font-poppins text-gray-800 mb-2">
+              Backend Development
+            </h3>
             <div className="w-20 h-1 bg-gradient-to-r from-purple-400 to-blue-400 mx-auto rounded-full"></div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
             {backendSkills.map((skill, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`flex flex-col items-center p-4 rounded-xl ${skill.color} transition-all duration-300 hover:scale-105`}
               >
                 <div className="w-16 h-16 mb-3 flex items-center justify-center">
-                  <img 
-                    src={skill.image} 
-                    alt={skill.name} 
+                  <img
+                    src={skill.image}
+                    alt={skill.name}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <p className="text-lg font-medium font-poppins text-gray-700">{skill.name}</p>
+                <p className="text-lg font-medium font-poppins text-gray-700">
+                  {skill.name}
+                </p>
               </div>
             ))}
           </div>
