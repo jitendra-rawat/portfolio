@@ -9,7 +9,7 @@ import blackberry from '../assets/black.png';
 import radit from '../assets/radit.png';
 import garhwal from '../assets/garhwal.png';
 import bhavishya from '../assets/bhavishya.png';
-import le from "../assets/le.png"
+import anand from "../assets/anand.png"
 import rajput from "../assets/rajput.png"
 import romaz from "../assets/romaz.png"
 import rud from "../assets/rud.png"
@@ -20,6 +20,8 @@ import icg from '../assets/icg.png'
 import dating from '../assets/datingkey.png'
 import dev from '../assets/dev.png'
 import dolphin from '../assets/dolphin.png'
+import outdoor from '../assets/outdoor.png'
+import hill from '../assets/hill.png'
 
 
 const projectsData = [
@@ -30,6 +32,13 @@ const projectsData = [
     link: 'https://datingkey.co/',
     category: 'Event Organiser & Dating'
   },
+
+  { 
+    title: 'Outdoor Trek India', 
+    image: outdoor, 
+    link: 'https://outdoortrekindia.com/',
+    category: 'Travel'
+  },
   { 
     title: 'Busy Boots Travel', 
     image: busy, 
@@ -37,18 +46,25 @@ const projectsData = [
     category: 'Travel'
   },
 
+ 
+ 
+  { 
+    title: 'Anandam Homestay & Treks', 
+    image: anand, 
+    link: 'https://anandamwoodhomestay.in/',
+    category: 'Travel'
+  },
   { 
     title: 'Tour Uttrakhand Travels', 
     image:tour, 
     link: 'https://tour-uttrakhand.vercel.app/',
     category: 'Travels'
   },
- 
   { 
-    title: 'Hotel Le Meadows', 
-    image: le, 
-    link: 'https://hotel-lemeadows.vercel.app/',
-    category: 'Hotel'
+    title: 'Prakriti Hill Resort', 
+    image:hill, 
+    link: 'https://www.prakritihillresort.in/',
+    category: 'Resort'
   },
   { 
     title: 'Hotel Dev Palace', 
@@ -56,6 +72,7 @@ const projectsData = [
     link: 'https://www.devpalace.in/',
     category: 'Hotel'
   },
+
   { 
     title: 'Innocreate Design', 
     image: icg, 

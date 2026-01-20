@@ -60,11 +60,9 @@ const About = () => {
                     Education
                   </h3>
                   <p className="text-purple-600 font-medium mt-1">
-                    B.Tech in Computer Engineering
+                    B.Tech in Computer Engineering (2014)
                   </p>
-                  <p className="text-gray-600 mt-2">
-                    Diploma in Computer Science & Engineering
-                  </p>
+          
                 </div>
               </div>
             </div>
