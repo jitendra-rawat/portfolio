@@ -3,88 +3,61 @@ import { FaLaptop, FaBook } from "react-icons/fa";
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="container mx-auto lg:max-w-7xl py-16 lg:py-28 px-4 lg:px-8"
-    >
-      <div className="text-center mb-16">
-        <p className="text-gray-600 font-poppins text-lg mb-2">
-          Get to know more
-        </p>
-        <h2 className="text-gray-900 font-poppins font-bold text-3xl lg:text-4xl">
-          About Me
-        </h2>
-      </div>
-
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-        {/* Left Section - Image */}
-        <div className="lg:w-2/5 flex justify-center">
-          <div className="relative group">
-            <img
-              src={image}
-              alt="Profile"
-              className="w-[280px] lg:w-[500px] h-[420px] lg:h-[600px] object-cover rounded-xl shadow-lg transform group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute inset-0 border-2 border-gray-200 rounded-xl pointer-events-none transform translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-all duration-300"></div>
-          </div>
-        </div>
-
-        {/* Right Section - Content */}
-        <div className="lg:w-3/5 space-y-8">
-          {/* Experience & Education Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Experience Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
-              <div className="flex flex-col items-center text-center space-y-4 h-full">
-                <div className="bg-blue-100 p-4 rounded-full">
-                  <FaLaptop className="text-blue-600" size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold font-poppins text-gray-800">
-                    Experience
-                  </h3>
-                  <p className="text-blue-600 font-medium mt-1">4+ Years</p>
-                  <p className="text-gray-600 mt-2">Software Development</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Education Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
-              <div className="flex flex-col items-center text-center space-y-4 h-full">
-                <div className="bg-purple-100 p-4 rounded-full">
-                  <FaBook className="text-purple-600" size={24} />
-                </div>
-           
-                <div>
-  <h3 className="text-xl font-semibold font-poppins text-gray-800">
-    Education
-  </h3>
-
-  <p className="text-purple-600 font-medium mt-1">
-    B.Tech in Computer Engineering
-  </p>
-  <p className="text-gray-600 text-sm mt-1">
-    Govind Ballabh Pant University of Agriculture and Technology Pantnagar · 2015–2018
-  </p>
-
-  {/* <p className="text-purple-600 font-medium mt-3">
-    Diploma in Computer Science & Engineering
-  </p>
-  <p className="text-gray-600 text-sm mt-1">
-    Government Polytechnic College · 2013–2015
-  </p> */}
-</div>
-              </div>
+    <section id="about" className="bg-[#faf9f7] py-28 lg:py-36">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          {/* Image */}
+          <div className="lg:col-span-5">
+            <div className="relative">
+              <img
+                src={image}
+                alt="Profile"
+                className="w-full rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] object-cover"
+              />
+              <div className="absolute -bottom-4 -right-4 w-full h-full border border-neutral-200 rounded-2xl -z-10" />
             </div>
           </div>
 
-          {/* About Text */}
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <p className="text-gray-700 font-poppins leading-relaxed">
-  I am a GenAI Engineer with 4+ years of experience building scalable web applications and AI-powered solutions. My expertise includes Generative AI, RAG, LangChain, LangGraph, Python, FastAPI, Next.js, React, Node.js, Express.js, and PostgreSQL. I focus on building production-ready applications with clean architecture, high performance, and intelligent AI-driven experiences.
-</p>
+          {/* Content */}
+          <div className="lg:col-span-7 space-y-10">
+            <div>
+              <p className="text-xs font-medium tracking-[0.15em] uppercase text-neutral-400 mb-3">About</p>
+              <h2 className="text-4xl lg:text-5xl font-serif font-medium text-neutral-900 leading-tight">
+                GenAI Engineer with{" "}
+                <span className="italic text-neutral-500">4+ years</span> of experience.
+              </h2>
+            </div>
 
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-white border border-neutral-100 rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow">
+                <div className="bg-neutral-100 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
+                  <FaLaptop className="text-neutral-700" size={18} />
+                </div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-1">Experience</h3>
+                <p className="text-2xl font-light text-neutral-400 mb-2">4+ Years</p>
+                <p className="text-sm text-neutral-500">Software Development</p>
+              </div>
+              <div className="bg-white border border-neutral-100 rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow">
+                <div className="bg-neutral-100 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
+                  <FaBook className="text-neutral-700" size={18} />
+                </div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-1">Education</h3>
+                <p className="text-lg font-medium text-neutral-900 leading-snug">B.Tech in Computer Engineering</p>
+                <p className="text-sm text-neutral-500 mt-1">GBPUAT Pantnagar · 2015–2018</p>
+              </div>
+            </div>
+
+            <div className="text-neutral-600 leading-relaxed text-lg space-y-4">
+              <p>
+                I am a GenAI Engineer with 4+ years of experience building scalable web applications
+                and AI-powered solutions. My expertise spans Generative AI, RAG pipelines, LangChain,
+                LangGraph, Python, FastAPI, Next.js, React, Node.js, Express.js, and PostgreSQL.
+              </p>
+              <p>
+                I focus on building production-ready applications with clean architecture, high
+                performance, and intelligent AI-driven experiences that solve real business problems.
+              </p>
+            </div>
           </div>
         </div>
       </div>

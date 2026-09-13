@@ -1,225 +1,95 @@
-import { useState } from 'react';
-import ReactPaginate from 'react-paginate';
-import { FiExternalLink } from 'react-icons/fi';
+import { useState } from "react";
+import { FiExternalLink } from "react-icons/fi";
 
-import coaching from '../assets/coaching.png';
-
-import blackberry from '../assets/black.png';
-
-import garhwal from '../assets/garhwal.png';
-
-import anand from "../assets/anand.png"
-import rajput from "../assets/rajput.png"
-import romaz from "../assets/romaz.png"
-
-import drona from '../assets/drona.png'
-
-import icg from '../assets/icg.png'
-import dating from '../assets/datingkey.png'
-import dev from '../assets/dev.png'
-
-import outdoor from '../assets/outdoor.png'
-import hill from '../assets/hill.png'
-import river from '../assets/rivervale.png'
-
-
-const projectsData = [
-
-  { 
-    title: 'DatingKey', 
-    image:dating, 
-    link: 'https://datingkey.co/',
-    category: 'Event Organiser & Dating'
+const projects = [
+  {
+    title: "DatingKey",
+    category: "Event · AI Matchmaking",
+    image: "/src/assets/datingkey.png",
+    link: "https://datingkey.co/",
+    desc: "Full-stack event & matchmaking platform with Squarespace payments, quiz assessments, and Gemini LLM-powered profile summaries.",
   },
-
-  { 
-    title: 'Outdoor Trek India', 
-    image: outdoor, 
-    link: 'https://outdoortrekindia.com/',
-    category: 'Travel'
+  {
+    title: "Outdoor Trek India",
+    category: "Travel",
+    image: "/src/assets/outdoor.png",
+    link: "https://outdoortrekindia.com/",
+    desc: "Adventure travel platform with responsive design, booking flows, and destination guides.",
   },
-
-   
-  { 
-    title: 'Hotel River Vale', 
-    image: river, 
-    link: 'https://hotelrivervale.com/',
-    category: 'Hotel'
+  {
+    title: "Hotel River Vale",
+    category: "Hotel",
+    image: "/src/assets/rivervale.png",
+    link: "https://hotelrivervale.com/",
+    desc: "Hospitality website with reservation system, property showcases, and clean landing pages.",
   },
-
- 
- 
-  { 
-    title: 'Anandam Homestay & Treks', 
-    image: anand, 
-    link: 'https://anandamwoodhomestay.in/',
-    category: 'Travel'
+  {
+    title: "Anandam Homestay",
+    category: "Travel",
+    image: "/src/assets/anand.png",
+    link: "https://anandamwoodhomestay.in/",
+    desc: "Homestay & trekking experience site with booking integration and destination visuals.",
   },
-
-  { 
-    title: 'Prakriti Hill Resort', 
-    image:hill, 
-    link: 'https://www.prakritihillresort.in/',
-    category: 'Resort'
+  {
+    title: "Prakriti Hill Resort",
+    category: "Hotel",
+    image: "/src/assets/hill.png",
+    link: "#",
+    desc: "Resort landing page with property tours, amenities, and contact details.",
   },
-  { 
-    title: 'Hotel Dev Palace', 
-    image: dev, 
-    link: 'https://www.devpalace.in/',
-    category: 'Hotel'
+  {
+    title: "Dev Palace",
+    category: "Hotel",
+    image: "/src/assets/dev.png",
+    link: "#",
+    desc: "Luxury hotel website with gallery, services, and room showcases.",
   },
-
-  { 
-    title: 'Innocreate Design', 
-    image: icg, 
-    link: 'https://innocreate-design.netlify.app/',
-    category: 'Product Design Company'
-  },
-  { 
-    title: 'Hotel Drona Hills', 
-    image: drona, 
-    link: 'https://www.hoteldronahills.in/',
-    category: 'Hotel'
-  },
-
-
-
- 
- 
-  { 
-    title: 'Blackberry Technologies', 
-    image: blackberry, 
-    link: 'https://www.blackberrytechnologies.net/',
-    category: 'Technology'
-  },
-
-  { 
-    title: 'Hotel Rajput', 
-    image: rajput, 
-    link: 'https://hotelrajput.in/',
-    category: 'Hotel'
-  },
-
-  { 
-    title: 'Hotel Romaz', 
-    image: romaz, 
-    link: 'https://hotelromaz.in/',
-    category: 'Hotel'
-  },
-
-  { 
-    title: 'Garhwal Himalayan Homestay', 
-    image: garhwal, 
-    link: 'https://www.garhwalhimalayanhomestay.in/',
-    category: 'Travel & Hospitality'
-  },
-
-
-  { 
-    title: 'Advisory and Consulting Agency', 
-    image: coaching, 
-    link: 'https://www.suigeneriscca.com/',
-    category: 'Professional Services'
-  },
- 
-
-
 ];
 
-const Projects = () => {
-  const [pageNumber, setPageNumber] = useState(0);
-  const projectsPerPage = 6;
-  const pagesVisited = pageNumber * projectsPerPage;
-  const pageCount = Math.ceil(projectsData.length / projectsPerPage);
-
-  const displayProjects = projectsData
-    .slice(pagesVisited, pagesVisited + projectsPerPage)
-    .map((project, index) => (
-      <div
-        key={`${project.title}-${index}`}
-        className="relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500"
-      >
-        <a 
-          href={project.link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="block"
-        >
-          <div className="relative h-64 overflow-hidden">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-              <div>
-                <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-blue-500 rounded-full mb-2">
-                  {project.category}
-                </span>
-                <h2 className="text-xl font-bold text-white">{project.title}</h2>
-              </div>
-            </div>
-            <div className="absolute top-4 right-4 bg-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <FiExternalLink className="text-gray-800" />
-            </div>
-          </div>
-        </a>
-      </div>
-    ));
-
-  const changePage = ({ selected }) => setPageNumber(selected);
+export default function Projects() {
+  const [hovered, setHovered] = useState(null);
 
   return (
-    <section id="projects" className="max-w-7xl mx-auto px-4 lg:px-8 py-20 relative">
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-40 h-40 rounded-full bg-blue-400 blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-60 h-60 rounded-full bg-purple-400 blur-3xl"></div>
-      </div>
-
-      {/* Header */}
-      <div className="text-center mb-16">
-        <p className="text-lg font-poppins text-gray-500 mb-2">Explore My</p>
-        <h2 className="text-4xl font-bold font-poppins bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-          Featured Projects
-        </h2>
-        <p className="max-w-2xl mx-auto mt-4 text-gray-600">
-          A collection of my recent work showcasing diverse solutions across different industries
-        </p>
-      </div>
-
-      {/* Projects Grid */}
-      <div className="grid gap-8 mt-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {displayProjects}
-      </div>
-
-      {/* Pagination */}
-      {pageCount > 1 && (
-        <div className="flex justify-center mt-16">
-          <ReactPaginate
-            previousLabel={
-              <span className="px-4 py-2 rounded-lg border hover:bg-gray-100 transition-colors">
-                Previous
-              </span>
-            }
-            nextLabel={
-              <span className="px-4 py-2 rounded-lg border hover:bg-gray-100 transition-colors">
-                Next
-              </span>
-            }
-            pageCount={pageCount}
-            onPageChange={changePage}
-            containerClassName="flex gap-2 items-center"
-            pageLinkClassName="w-10 h-10 flex items-center justify-center rounded-lg border hover:bg-gray-100 transition-colors font-medium"
-            previousLinkClassName="font-poppins"
-            nextLinkClassName="font-poppins"
-            activeLinkClassName="bg-gradient-to-r from-blue-500 to-purple-500 text-white border-transparent"
-            disabledLinkClassName="opacity-50 cursor-not-allowed hover:bg-transparent"
-          />
+    <section id="projects" className="bg-white py-28 lg:py-36 border-t border-neutral-100">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        <div className="text-center mb-16">
+          <p className="text-xs font-medium tracking-[0.15em] uppercase text-neutral-400 mb-3">Portfolio</p>
+          <h2 className="text-4xl lg:text-5xl font-serif font-medium text-neutral-900 leading-tight">
+            Selected <span className="italic text-neutral-400">Projects</span>
+          </h2>
         </div>
-      )}
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((p, i) => (
+            <a
+              key={i}
+              href={p.link}
+              target={p.link.startsWith("http") ? "_blank" : undefined}
+              rel={p.link.startsWith("http") ? "noopener noreferrer" : undefined}
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+              className="group block bg-[#faf9f7] border border-neutral-200/60 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+            >
+              <div className="relative overflow-hidden aspect-[4/3]">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className={`w-full h-full object-cover transition-transform duration-700 ${hovered === i ? "scale-105" : "scale-100"}`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              <div className="p-7 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-semibold tracking-wider uppercase text-neutral-400">{p.category}</span>
+                  <FiExternalLink size={14} className="text-neutral-300 group-hover:text-neutral-900 transition-colors" />
+                </div>
+                <h3 className="text-xl font-semibold text-neutral-900 group-hover:text-neutral-600 transition-colors">{p.title}</h3>
+                <p className="text-sm text-neutral-500 leading-relaxed">{p.desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
     </section>
   );
-};
-
-export default Projects;
+}
