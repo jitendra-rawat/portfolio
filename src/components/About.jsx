@@ -55,34 +55,36 @@ const About = () => {
                 <div className="bg-purple-100 p-4 rounded-full">
                   <FaBook className="text-purple-600" size={24} />
                 </div>
+           
                 <div>
-                  <h3 className="text-xl font-semibold font-poppins text-gray-800">
-                    Education
-                  </h3>
-                  <p className="text-purple-600 font-medium mt-1">
-                    B.Tech in Computer Engineering (2014)
-                  </p>
-          
-                </div>
+  <h3 className="text-xl font-semibold font-poppins text-gray-800">
+    Education
+  </h3>
+
+  <p className="text-purple-600 font-medium mt-1">
+    B.Tech in Computer Engineering
+  </p>
+  <p className="text-gray-600 text-sm mt-1">
+    Govind Ballabh Pant University of Agriculture and Technology Pantnagar · 2015–2018
+  </p>
+
+  {/* <p className="text-purple-600 font-medium mt-3">
+    Diploma in Computer Science & Engineering
+  </p>
+  <p className="text-gray-600 text-sm mt-1">
+    Government Polytechnic College · 2013–2015
+  </p> */}
+</div>
               </div>
             </div>
           </div>
 
           {/* About Text */}
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-            <p className="text-gray-700 font-poppins leading-relaxed">
-              I am a dedicated Full Stack Developer with 4 years of hands-on
-              experience in designing and delivering modern, scalable digital
-              solutions. My technical expertise includes React, Next.js,
-              Node.js, Express.js, SQL, PostreSQL <br />
-              I develop robust web applications and cross-platform mobile solutions 
-               with a strong focus on clean architecture,
-              performance optimization, and intuitive user experience. 
-              <br />I also
-              work with Generative AI technologies, integrating AI-driven
-              features to enhance product capabilities, automate workflows, and
-              create smarter user interactions. 
-            </p>
+          <p className="text-gray-700 font-poppins leading-relaxed">
+  I am a GenAI Engineer with 4+ years of experience building scalable web applications and AI-powered solutions. My expertise includes Generative AI, RAG, LangChain, LangGraph, Python, FastAPI, Next.js, React, Node.js, Express.js, and PostgreSQL. I focus on building production-ready applications with clean architecture, high performance, and intelligent AI-driven experiences.
+</p>
+
           </div>
         </div>
       </div>

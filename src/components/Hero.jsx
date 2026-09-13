@@ -1,5 +1,6 @@
 import { FaLinkedin, FaGithub, FaArrowDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import hero_img from "../assets/hero.png"
 
 const Hero = () => {
   return (
@@ -20,11 +21,12 @@ const Hero = () => {
             Jitendra Rawat
           </h1>
           <p className="text-xl lg:text-2xl font-semibold font-poppins text-gray-600 mb-6 animate-fadeIn">
-            Software Engineer
-          </p>
+  AI Engineer | Full Stack Developer
+</p>
           
           <p className="text-gray-600 font-poppins max-w-lg mx-auto lg:mx-0 mb-8 animate-fadeIn">
-            Crafting digital experiences with clean code and modern technologies.
+          Building intelligent, scalable digital products by combining Generative AI, modern web technologies, and clean, production-ready code.
+
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8 animate-fadeIn">
@@ -64,22 +66,17 @@ const Hero = () => {
         <div className="lg:w-1/2 flex justify-center animate-float">
           <div className="relative">
             <img
-              src='https://avatars.githubusercontent.com/u/120551529?v=4'
+              src={hero_img}
               alt="Jitendra Rawat"
               className="rounded-full w-64 h-64 lg:w-96 lg:h-96 object-cover border-4 border-white shadow-2xl"
             />
             <div className="absolute inset-0 rounded-full border-4 border-transparent animate-ping-slow pointer-events-none"></div>
-            <div className="absolute -bottom-4 -right-4 bg-blue-500 text-white text-xs font-bold py-1 px-3 rounded-full shadow-lg">
-              Available
-            </div>
+          
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <FaArrowDown className="text-gray-600" size={24} />
-      </div>
+  
 
       {/* Add these to your global CSS */}
       <style jsx>{`

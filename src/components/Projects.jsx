@@ -3,25 +3,24 @@ import ReactPaginate from 'react-paginate';
 import { FiExternalLink } from 'react-icons/fi';
 
 import coaching from '../assets/coaching.png';
-import busy from '../assets/busy.png';
-import ajar from '../assets/ngo.png';
+
 import blackberry from '../assets/black.png';
-import radit from '../assets/radit.png';
+
 import garhwal from '../assets/garhwal.png';
-import bhavishya from '../assets/bhavishya.png';
+
 import anand from "../assets/anand.png"
 import rajput from "../assets/rajput.png"
 import romaz from "../assets/romaz.png"
-import rud from "../assets/rud.png"
+
 import drona from '../assets/drona.png'
-import tour from '../assets/touruttrakhandtravels.png'
-import pashupati from '../assets/pashupati.png'
+
 import icg from '../assets/icg.png'
 import dating from '../assets/datingkey.png'
 import dev from '../assets/dev.png'
-import dolphin from '../assets/dolphin.png'
+
 import outdoor from '../assets/outdoor.png'
 import hill from '../assets/hill.png'
+import river from '../assets/rivervale.png'
 
 
 const projectsData = [
@@ -39,11 +38,13 @@ const projectsData = [
     link: 'https://outdoortrekindia.com/',
     category: 'Travel'
   },
+
+   
   { 
-    title: 'Busy Boots Travel', 
-    image: busy, 
-    link: 'https://busybootstravel.com/',
-    category: 'Travel'
+    title: 'Hotel River Vale', 
+    image: river, 
+    link: 'https://hotelrivervale.com/',
+    category: 'Hotel'
   },
 
  
@@ -54,12 +55,7 @@ const projectsData = [
     link: 'https://anandamwoodhomestay.in/',
     category: 'Travel'
   },
-  { 
-    title: 'Tour Uttrakhand Travels', 
-    image:tour, 
-    link: 'https://tour-uttrakhand.vercel.app/',
-    category: 'Travels'
-  },
+
   { 
     title: 'Prakriti Hill Resort', 
     image:hill, 
@@ -85,18 +81,8 @@ const projectsData = [
     link: 'https://www.hoteldronahills.in/',
     category: 'Hotel'
   },
-  { 
-    title: 'Hotel Dolphin', 
-    image: dolphin, 
-    link: 'https://www.hoteldolpin.in/',
-    category: 'Hotel'
-  },
-  { 
-    title: 'Hotel Pashupati Palace', 
-    image: pashupati, 
-    link: 'https://www.pashupatipalace.in/',
-    category: 'Hotel'
-  },
+
+
 
  
  
@@ -120,37 +106,15 @@ const projectsData = [
     link: 'https://hotelromaz.in/',
     category: 'Hotel'
   },
-  { 
-    title: 'Rudransh Guest House', 
-    image: rud, 
-    link: 'https://www.rudranshguesthouse.in/',
-    category: 'Hotel'
-  },
+
   { 
     title: 'Garhwal Himalayan Homestay', 
     image: garhwal, 
     link: 'https://www.garhwalhimalayanhomestay.in/',
     category: 'Travel & Hospitality'
   },
-  { 
-    title: 'Bhavishya Badri Homestay', 
-    image: bhavishya, 
-    link: 'https://www.newbhavisyabadrihomestay.in/',
-    category: 'Travel & Hospitality'
-  },
-  // { 
-  //   title: 'Tour and Travel Web App', 
-  //   image: travel, 
-  //   link: 'https://busybootstravel.netlify.app/',
-  //   category: 'Travel'
-  // },
- 
-  { 
-    title: 'Radit Software', 
-    image: radit, 
-    link: 'https://radit-software.netlify.app/',
-    category: 'Corporate Website'
-  },
+
+
   { 
     title: 'Advisory and Consulting Agency', 
     image: coaching, 
@@ -159,12 +123,7 @@ const projectsData = [
   },
  
 
-  { 
-    title: 'Ajar Blind School', 
-    image: ajar, 
-    link: 'https://ajar-blind-school.netlify.app/',
-    category: 'Non-Profit'
-  },
+
 ];
 
 const Projects = () => {
