@@ -19,11 +19,39 @@ const projects = [
     desc: "Adventure travel platform with responsive design, booking flows, and destination guides.",
   },
   {
+    title: "Blackberry Technologies",
+    category: "IT Company",
+    image: "/src/assets/black.png",
+    link: "https://www.blackberrytechnologies.net/",
+    desc: "IT Company providing IT Services",
+  },
+  {
     title: "Hotel River Vale",
     category: "Hotel",
     image: "/src/assets/rivervale.png",
     link: "https://hotelrivervale.com/",
     desc: "Hospitality website with reservation system, property showcases, and clean landing pages.",
+  },
+  {
+    title: "Innocreate Design",
+    category: "Product Design Company",
+    image: "/src/assets/icg.png",
+    link: "https://innocreate-design.netlify.app/",
+    desc: "Product Design Company",
+  },
+  {
+    title: "Raddit Software",
+    category: "Software Company",
+    image: "/src/assets/radit.png",
+    link: "https://radit-software.netlify.app/",
+    desc: "",
+  },
+  {
+    title: "Honda Showroom",
+    category: "Honda Showroom",
+    image: "/src/assets/honda.png",
+    link: "https://www.aashirwadhondashowroom.in/",
+    desc: "",
   },
   {
     title: "Anandam Homestay",
@@ -36,14 +64,30 @@ const projects = [
     title: "Prakriti Hill Resort",
     category: "Hotel",
     image: "/src/assets/hill.png",
-    link: "#",
+    link: "https://www.prakritihillresort.in/",
     desc: "Resort landing page with property tours, amenities, and contact details.",
   },
+  {
+    title: "Hotel Le Meadows",
+    category: "Hotel",
+    image: "/src/assets/le.png",
+    link: "https://lee-meadows.vercel.app/",
+    desc: "Luxury hotel website with gallery, services, and room showcases.",
+  },
+
+  {
+    title: "Le Meadows Landing Pahe",
+    category: "Hotel",
+    image: "/src/assets/le-details.png",
+    link: "https://www.lemeadowsb2bdetails.in/",
+    desc: "Luxury hotel website with gallery, services, and room showcases.",
+  },
+
   {
     title: "Dev Palace",
     category: "Hotel",
     image: "/src/assets/dev.png",
-    link: "#",
+    link: "https://devpalace.in/",
     desc: "Luxury hotel website with gallery, services, and room showcases.",
   },
 ];
