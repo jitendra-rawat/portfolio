@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Briefcase, GraduationCap, Building2, ChevronDown, ChevronRight } from "lucide-react";
+import AnimateOnScroll from "./AnimateOnScroll";
+import StaggerContainer, { StaggerItem } from "./StaggerContainer";
 
 const jobs = [
   {
@@ -70,91 +72,105 @@ export default function Experience() {
   return (
     <section id="experience" className="bg-[#faf9f7] py-28 lg:py-36 border-t border-neutral-100">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
-        <div className="text-center mb-16">
+        <AnimateOnScroll variant="fadeUp" className="text-center mb-16">
           <p className="text-xs font-medium tracking-[0.15em] uppercase text-neutral-400 mb-3">Career</p>
           <h2 className="text-4xl lg:text-5xl font-serif font-medium text-neutral-900 leading-tight">
             Experience <span className="italic text-neutral-400">& Education</span>
           </h2>
-        </div>
+        </AnimateOnScroll>
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Work */}
           <div className="lg:col-span-7 space-y-8">
-            <h3 className="text-xl font-semibold text-neutral-900 flex items-center gap-3 mb-2">
-              <Briefcase size={20} className="text-neutral-400" />
-              Work Experience
-            </h3>
-            {jobs.map((j, i) => (
-              <div key={i} className="bg-white border border-neutral-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <button
-                  onClick={() => setOpen(open === i ? -1 : i)}
-                  className="w-full text-left px-7 py-6 flex items-start justify-between hover:bg-neutral-50 transition-colors"
-                >
-                  <div>
-                    <div className="flex items-center gap-3 mb-1 flex-wrap">
-                      <h4 className="text-lg font-semibold text-neutral-900">{j.company}</h4>
-                      <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-500 border border-neutral-200">{j.role}</span>
-                    </div>
-                    <p className="text-sm text-neutral-400">{j.period} · {j.location}</p>
-                  </div>
-                  {open === i ? (
-                    <ChevronDown size={18} className="text-neutral-400 shrink-0 mt-0.5" />
-                  ) : (
-                    <ChevronRight size={18} className="text-neutral-400 shrink-0 mt-0.5" />
-                  )}
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${open === i ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}
-                >
-                  <div className="px-7 pb-6 pt-1 space-y-3 border-t border-neutral-100">
-                    {j.bullets.map((b, idx) => (
-                      <div key={idx} className="flex gap-3 text-sm text-neutral-600 leading-relaxed items-start">
-                        <span className="w-1 h-1 rounded-full bg-neutral-300 mt-2 shrink-0" />
-                        <p>{b}</p>
+            <AnimateOnScroll variant="fadeRight" delay={0.1}>
+              <h3 className="text-xl font-semibold text-neutral-900 flex items-center gap-3 mb-2">
+                <Briefcase size={20} className="text-neutral-400" />
+                Work Experience
+              </h3>
+            </AnimateOnScroll>
+            <StaggerContainer stagger={0.15} className="space-y-4">
+              {jobs.map((j, i) => (
+                <StaggerItem key={i}>
+                  <div className="bg-white border border-neutral-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <button
+                      onClick={() => setOpen(open === i ? -1 : i)}
+                      className="w-full text-left px-7 py-6 flex items-start justify-between hover:bg-neutral-50 transition-colors"
+                    >
+                      <div>
+                        <div className="flex items-center gap-3 mb-1 flex-wrap">
+                          <h4 className="text-lg font-semibold text-neutral-900">{j.company}</h4>
+                          <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-500 border border-neutral-200">{j.role}</span>
+                        </div>
+                        <p className="text-sm text-neutral-400">{j.period} · {j.location}</p>
                       </div>
-                    ))}
+                      {open === i ? (
+                        <ChevronDown size={18} className="text-neutral-400 shrink-0 mt-0.5" />
+                      ) : (
+                        <ChevronRight size={18} className="text-neutral-400 shrink-0 mt-0.5" />
+                      )}
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${open === i ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}
+                    >
+                      <div className="px-7 pb-6 pt-1 space-y-3 border-t border-neutral-100">
+                        {j.bullets.map((b, idx) => (
+                          <div key={idx} className="flex gap-3 text-sm text-neutral-600 leading-relaxed items-start">
+                            <span className="w-1 h-1 rounded-full bg-neutral-300 mt-2 shrink-0" />
+                            <p>{b}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
           </div>
 
           {/* Education + Projects sidebar */}
           <div className="lg:col-span-5 space-y-10">
             <div>
-              <h3 className="text-xl font-semibold text-neutral-900 flex items-center gap-3 mb-6">
-                <GraduationCap size={20} className="text-neutral-400" />
-                Education
-              </h3>
-              <div className="space-y-4">
+              <AnimateOnScroll variant="fadeLeft" delay={0.1}>
+                <h3 className="text-xl font-semibold text-neutral-900 flex items-center gap-3 mb-6">
+                  <GraduationCap size={20} className="text-neutral-400" />
+                  Education
+                </h3>
+              </AnimateOnScroll>
+              <StaggerContainer stagger={0.15} className="space-y-4">
                 {education.map((ed, i) => (
-                  <div key={i} className="bg-white border border-neutral-200/60 rounded-2xl p-6 shadow-sm">
-                    <h4 className="font-semibold text-neutral-900">{ed.degree}</h4>
-                    <p className="text-sm text-neutral-500 mt-1">{ed.school}</p>
-                    <p className="text-xs text-neutral-400 mt-2">{ed.period} · {ed.location}</p>
-                  </div>
+                  <StaggerItem key={i}>
+                    <div className="bg-white border border-neutral-200/60 rounded-2xl p-6 shadow-sm">
+                      <h4 className="font-semibold text-neutral-900">{ed.degree}</h4>
+                      <p className="text-sm text-neutral-500 mt-1">{ed.school}</p>
+                      <p className="text-xs text-neutral-400 mt-2">{ed.period} · {ed.location}</p>
+                    </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-neutral-900 flex items-center gap-3 mb-6">
-                <Building2 size={20} className="text-neutral-400" />
-                Featured Projects
-              </h3>
-              <div className="space-y-5">
+              <AnimateOnScroll variant="fadeLeft" delay={0.2}>
+                <h3 className="text-xl font-semibold text-neutral-900 flex items-center gap-3 mb-6">
+                  <Building2 size={20} className="text-neutral-400" />
+                  Featured Projects
+                </h3>
+              </AnimateOnScroll>
+              <StaggerContainer stagger={0.15} className="space-y-5">
                 {projects.map((p, i) => (
-                  <div key={i} className="bg-white border border-neutral-200/60 rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow">
-                    <h4 className="text-xl font-semibold text-neutral-900 mb-2">{p.title}</h4>
-                    <p className="text-sm text-neutral-600 leading-relaxed mb-4">{p.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {p.tags.map((t) => (
-                        <span key={t} className="text-xs font-medium px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-600 border border-neutral-200">{t}</span>
-                      ))}
+                  <StaggerItem key={i}>
+                    <div className="bg-white border border-neutral-200/60 rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow">
+                      <h4 className="text-xl font-semibold text-neutral-900 mb-2">{p.title}</h4>
+                      <p className="text-sm text-neutral-600 leading-relaxed mb-4">{p.desc}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {p.tags.map((t) => (
+                          <span key={t} className="text-xs font-medium px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-600 border border-neutral-200">{t}</span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             </div>
           </div>
         </div>

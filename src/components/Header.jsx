@@ -1,4 +1,19 @@
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
+
 export default function Header() {
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   const links = [
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
@@ -8,7 +23,15 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#faf9f7]/90 backdrop-blur-md border-b border-neutral-200/60">
+    <motion.header
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+      className="sticky top-0 z-50 bg-[#faf9f7]/90 backdrop-blur-md border-b border-neutral-200/60"
+    >
       <div className="max-w-6xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
         <a href="#hero" className="text-xl font-serif font-medium text-neutral-900 tracking-tight">Jitendra Rawat</a>
         <nav className="hidden md:flex gap-8">
@@ -17,6 +40,6 @@ export default function Header() {
           ))}
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 }
