@@ -3,92 +3,106 @@ import { FiExternalLink } from "react-icons/fi";
 import AnimateOnScroll from "./AnimateOnScroll";
 import StaggerContainer, { StaggerItem } from "./StaggerContainer";
 
+// 1. Import all images here
+// Adjust the relative path (../assets/ or ./assets/) based on where this component is located
+import datingKeyImg from "../assets/datingkey.png";
+import outdoorImg from "../assets/outdoor.png";
+import blackImg from "../assets/black.png";
+import riverValeImg from "../assets/rivervale.png";
+import icgImg from "../assets/icg.png";
+import raditImg from "../assets/radit.png";
+import hondaImg from "../assets/honda.png";
+import anandImg from "../assets/anand.png";
+import hillImg from "../assets/hill.png";
+import leImg from "../assets/le.png";
+import leDetailsImg from "../assets/le-details.png";
+import devImg from "../assets/dev.png";
+
+// 2. Use the imported variables in your data array (no quotes)
 const projects = [
   {
     title: "DatingKey",
     category: "Event · AI Matchmaking",
-    image: "/src/assets/datingkey.png",
+    image: datingKeyImg,
     link: "https://datingkey.co/",
     desc: "Full-stack event & matchmaking platform with Squarespace payments, quiz assessments, and Gemini LLM-powered profile summaries.",
   },
   {
     title: "Outdoor Trek India",
     category: "Travel",
-    image: "/src/assets/outdoor.png",
+    image: outdoorImg,
     link: "https://outdoortrekindia.com/",
     desc: "Adventure travel platform with responsive design, booking flows, and destination guides.",
   },
   {
     title: "Blackberry Technologies",
     category: "IT Company",
-    image: "/src/assets/black.png",
+    image: blackImg,
     link: "https://www.blackberrytechnologies.net/",
-    desc: "IT Company providing IT Services",
+    desc: "Corporate IT services platform showcasing enterprise software solutions, technical consulting, and digital transformation capabilities.",
   },
   {
     title: "Hotel River Vale",
     category: "Hotel",
-    image: "/src/assets/rivervale.png",
+    image: riverValeImg,
     link: "https://hotelrivervale.com/",
     desc: "Hospitality website with reservation system, property showcases, and clean landing pages.",
   },
   {
     title: "Innocreate Design",
     category: "Product Design Company",
-    image: "/src/assets/icg.png",
+    image: icgImg,
     link: "https://innocreate-design.netlify.app/",
-    desc: "Product Design Company",
+    desc: "Creative agency portfolio featuring UX/UI case studies, branding services, and modern interactive web design.",
   },
   {
     title: "Raddit Software",
     category: "Software Company",
-    image: "/src/assets/radit.png",
+    image: raditImg,
     link: "https://radit-software.netlify.app/",
-    desc: "",
+    desc: "B2B software solutions provider highlighting custom development services, technology stacks, and client success stories.",
   },
   {
     title: "Honda Showroom",
-    category: "Honda Showroom",
-    image: "/src/assets/honda.png",
+    category: "Automotive",
+    image: hondaImg,
     link: "https://www.aashirwadhondashowroom.in/",
-    desc: "",
+    desc: "Dealership website featuring a digital showroom, vehicle specifications, inquiry forms, and test-drive booking features.",
   },
   {
     title: "Anandam Homestay",
     category: "Travel",
-    image: "/src/assets/anand.png",
+    image: anandImg,
     link: "https://anandamwoodhomestay.in/",
     desc: "Homestay & trekking experience site with booking integration and destination visuals.",
   },
   {
     title: "Prakriti Hill Resort",
     category: "Hotel",
-    image: "/src/assets/hill.png",
+    image: hillImg,
     link: "https://www.prakritihillresort.in/",
     desc: "Resort landing page with property tours, amenities, and contact details.",
   },
   {
     title: "Hotel Le Meadows",
     category: "Hotel",
-    image: "/src/assets/le.png",
+    image: leImg,
     link: "https://lee-meadows.vercel.app/",
-    desc: "Luxury hotel website with gallery, services, and room showcases.",
+    desc: "Luxury hotel website with detailed photo galleries, service listings, and immersive room showcases.",
   },
-
   {
-    title: "Le Meadows Landing Pahe",
+    title: "Le Meadows Landing Page",
     category: "Hotel",
-    image: "/src/assets/le-details.png",
+    image: leDetailsImg,
     link: "https://www.lemeadowsb2bdetails.in/",
-    desc: "Luxury hotel website with gallery, services, and room showcases.",
+    desc: "High-converting B2B hospitality landing page tailored for travel agents and corporate event bookings.",
   },
-
   {
     title: "Dev Palace",
     category: "Hotel",
-    image: "/src/assets/dev.png",
+    image: devImg,
     link: "https://devpalace.in/",
-    desc: "Luxury hotel website with gallery, services, and room showcases.",
+    desc: "Elegant hospitality platform highlighting premium accommodations, event banquet spaces, and direct guest reservation capabilities.",
   },
 ];
 
